@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
-import sys
-import os
-# 获取当前文件的绝对路径
-current_file = os.path.abspath(__file__)
-# 获取当前文件所在目录（Src目录）
-current_dir = os.path.dirname(current_file)
-# 获取上级目录（项目根目录，包含yolov13的目录）
-project_root = os.path.dirname(current_dir)
+# import sys
+# import os
+# current_file = os.path.abspath(__file__)
+# current_dir = os.path.dirname(current_file)
+# project_root = os.path.dirname(current_dir)
 
-# 将项目根目录添加到Python路径中
-sys.path.append(project_root)
+# sys.path.append(project_root)
+# sys.path.append(os.path.join(project_root, 'yolov13'))
+# print(sys.path)
 import cv2
-from yolov13.ultralytics import YOLO
 import time
+from yolov13.ultralytics import YOLO
 
-model = YOLO('/home/yuqingchi/Code/yolo+ONNXruntime+TensorRT/runs/train/exp5/weights/best.pt')
+
+model = YOLO('/home/yuqingchi/Code/Yolo-ONNX-TensorRT/runs/train/exp8/weights/best.pt')
 
 video_path = ""
 cap = cv2.VideoCapture(0)  # 更改数字，切换不同的摄像头
