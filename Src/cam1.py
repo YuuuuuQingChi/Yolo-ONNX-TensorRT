@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-# import sys
-# import os
-# current_file = os.path.abspath(__file__)
-# current_dir = os.path.dirname(current_file)
-# project_root = os.path.dirname(current_dir)
-
-# sys.path.append(project_root)
-# sys.path.append(os.path.join(project_root, 'yolov13'))
-# print(sys.path)
 import cv2
 import time
 from yolov13.ultralytics import YOLO
