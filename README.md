@@ -87,11 +87,14 @@ device：CPU/GPU
 
 close_mosaic：给定数字，在训练的最后 N 个 epoch 关闭马赛克数据增强
 马赛克增强将多张图像拼接成一张进行训练
-resume=False,
-        project="runs/train",
-        name="exp",
-        single_cls=False,
-        cache=False,
+
+resume： 是否从之前中断的训练中恢复。为False就从头开始训练，为True就自动从上次保存的最新检查点（通常是 last.pt）恢复训练。这会加载模型权重、优化器状态、epoch 计数等信息，无缝继续训练。常用于训练意外中断的情况。
+
+device：就是设备
+
+project：指定保存训练结果（日志、权重等）的根目录。
+
+name：每次训练结果
 
 # OnnxRuntime
 
@@ -106,9 +109,17 @@ OnnxRuntime是深度学习的推理引擎
 
 ```
 # 1. 安装依赖
-pip install flatbuffers numpy packaging protobuf sympy
+pip install flatbuffers numpy packaging protobuf sympy 
 
 # 2. 安装与 CUDA 11.8 兼容的 ONNX Runtime GPU 版本
 pip install onnxruntime-gpu --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-118/pypi/simple/
+
+# 3. 使用export.py导出onnx格式
+from yolov13.ultralytics import YOLO
+
+model = YOLO('/home/yuqingchi/Code/Yolo-ONNX-TensorRT/runs/train/exp8/weights/best.pt')
+model.export(format="onnx",half =True)
+
+这个half指的是半精度，会更节省时间，但是牺牲精度
 ```
 

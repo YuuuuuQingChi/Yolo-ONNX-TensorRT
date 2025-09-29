@@ -10,7 +10,4 @@ project_root=$(dirname "$current_dir")
 # 设置PYTHONPATH环境变量（仅对当前终端有效）
 export PYTHONPATH="$project_root:$project_root/yolov13:$PYTHONPATH"
 
-# 打印设置信息
-echo "PYTHONPATH已设置为: $PYTHONPATH"
-echo "此设置仅对当前终端会话有效"
-echo "现在您可以在此终端中运行您的Python程序"
+echo "Successfully set PYTHONPATH to include project root and yolov13 directory."
