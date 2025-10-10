@@ -3,10 +3,10 @@ import time
 from yolov13.ultralytics import YOLO
 
 
-model = YOLO('/home/yuqingchi/Code/Yolo-ONNX-TensorRT/runs/train/exp8/weights/best.pt')
+model = YOLO('/home/yuqingchi/Code/Yolo-ONNX-TensorRT/runs/train/exp9/weights/best.pt')
 
 video_path = ""
-cap = cv2.VideoCapture(0)  # 更改数字，切换不同的摄像头
+cap = cv2.VideoCapture(2)  # 更改数字，切换不同的摄像头
 
 # loop
 while cap.isOpened():

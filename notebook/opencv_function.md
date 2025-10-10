@@ -21,3 +21,28 @@ cv里面没有提供hcw转化cwh等等函数，需要通过transpose来实现
 
 # img_with_batch = img[np.newaxis, ...]
 在开头添加一个新的维度
+
+# cv.rectangle
+这个用来绘制矩形框
+```py
+cv2.rectangle(image, (int(x), int(y)), (int(x + w), int(y + h)), color, 2)
+```
+第一个参数是图像
+
+后续是位置、颜色、线条粗细
+
+# cv2.putText(image, label, (int(x), int(y) - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
+
+image：要绘制的图像
+
+label：要绘制的文本
+
+(int(x), int(y) - 5)：文本起始位置
+
+cv2.FONT_HERSHEY_SIMPLEX：字体类型
+
+0.6：字体大小
+
+(255, 255, 255)：文本颜色（白色）
+
+1：文本线条粗细
