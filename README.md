@@ -20,6 +20,8 @@ https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
 
 ```
 bash 文件路径
+export PATH="~/anaconda3/bin:$PATH"
+
 ```
 
 ## 安装cuda+torch
